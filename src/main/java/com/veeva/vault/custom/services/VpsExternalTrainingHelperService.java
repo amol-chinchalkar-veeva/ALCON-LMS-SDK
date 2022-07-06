@@ -14,13 +14,17 @@
  */
 package com.veeva.vault.custom.services;
 
-import com.veeva.vault.custom.model.VpsExternalTrainingQueueItem;
+import com.veeva.vault.custom.model.VpsExternalTrainingModel;
 import com.veeva.vault.sdk.api.core.*;
+import com.veeva.vault.sdk.api.data.Record;
 
 import java.util.List;
+import java.util.Map;
 
 @UserDefinedServiceInfo
-public interface VpsExternalFTRTrainingHelperService extends UserDefinedService {
-   List<VpsExternalTrainingQueueItem> getExternalTrainingQueueItems();
-   void createFTRFromQueueItems(VpsExternalTrainingQueueItem vpsExternalTrainingQueueItem);
+public interface VpsExternalTrainingHelperService extends UserDefinedService {
+   Map<String, List<VpsExternalTrainingModel>> getExternalTrainingAssignmentModels(String id);
+   Map<List<String>, List<String>> createFacilitatedTrainingForAssignments(Map<String, List<VpsExternalTrainingModel>> vpsExternalTrainingQueueItemsMap);
+   List<String>  createFacilitatedReqAndTrainingAssignment(Map<List<String>, List<String>> facilitatedTrainingIDsAsMap);
+   void callUserAction(Map<List<String>, List<String>> facilitatedTrainingIDsAsMap, String actionName);
 }

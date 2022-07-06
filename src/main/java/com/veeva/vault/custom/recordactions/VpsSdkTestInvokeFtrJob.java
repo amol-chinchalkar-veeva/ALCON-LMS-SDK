@@ -32,7 +32,7 @@ public class VpsSdkTestInvokeFtrJob implements RecordAction {
 
     public void execute(RecordActionContext context) {
         JobService jobService = ServiceLocator.locate(JobService.class);
-        JobParameters jobParameters = jobService.newJobParameters("create_external_adhoc_ftr__c");
+        JobParameters jobParameters = jobService.newJobParameters("vps_process_multiple_training_completion__c");
         JobRunResult result = jobService.runJob(jobParameters);
         result.getJobId();
     }

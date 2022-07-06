@@ -18,7 +18,7 @@ import com.veeva.vault.sdk.api.core.*;
 import com.veeva.vault.sdk.api.data.*;
 
 @UserDefinedModelInfo(include = UserDefinedPropertyInclude.NON_NULL)
-public interface VpsExternalTrainingQueueItem extends UserDefinedModel {
+public interface VpsExternalTrainingModel extends UserDefinedModel {
 
     @UserDefinedProperty(name = "name__v", aliases = {"name", "name__c"})
     String getName();
